@@ -1,0 +1,70 @@
+GIT
+  remote: git://github.com/honeycomb-tv/hosted_graphite.git
+  revision: 1d437b41d05835cfb61b210f146b08a534e782b5
+  branch: add-enabled-flag
+  specs:
+    hosted_graphite (0.1.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ast (2.3.0)
+    coderay (1.1.1)
+    concurrent-ruby (1.0.2)
+    connection_pool (2.2.0)
+    diff-lcs (1.2.5)
+    eventmachine (1.2.0.1)
+    method_source (0.8.2)
+    parser (2.3.1.4)
+      ast (~> 2.2)
+    powerpack (0.1.1)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    rack (2.0.1)
+    rack-protection (1.5.3)
+      rack
+    rainbow (2.1.0)
+    redis (3.3.1)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+    rspec-core (3.5.3)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
+    rubocop (0.43.0)
+      parser (>= 2.3.1.1, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-progressbar (1.8.1)
+    sidekiq (4.2.2)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      rack-protection (~> 1.5)
+      redis (~> 3.2, >= 3.2.1)
+    slop (3.6.0)
+    unicode-display_width (1.1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  eventmachine (~> 1.2.0)
+  hosted_graphite!
+  pry
+  rspec
+  rubocop
+  sidekiq (~> 4.2.2)
+
+BUNDLED WITH
+   1.13.1

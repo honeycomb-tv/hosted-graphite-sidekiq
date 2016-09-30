@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'bundler'
+
+Bundler.require :default
+
+require_relative '../lib/collector'
+require_relative '../lib/reporter'
+
+HostedGraphite.enabled = false
+
+interval = 15
+env = 'testing'
+collector = Collector.new
+reporter = Reporter.new(namespace: ['sidekiq', env])
+
+loop do
+  reporter.send collector.stats
+
+  sleep interval
+end
