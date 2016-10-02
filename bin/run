@@ -3,18 +3,32 @@
 require 'rubygems'
 require 'bundler'
 
+# Load gems from Gemfile
 Bundler.require :default
+Dotenv.load
 
-require_relative '../lib/collector'
-require_relative '../lib/reporter'
+# Load configuration options from env
+# HGS stands for Hosted Graphite Sidekiq
+env = ENV['HGS_ENV'] || :development
+interval = ENV['HGS_INTERVAL']&.to_i || 15
 
+# Load all the files from lib directory
+Dir[File.expand_path('../lib/*.rb', File.dirname(__FILE__))].each do |file|
+  require file
+end
+
+# Configure HostedGraphite
 HostedGraphite.enabled = false
 
-interval = 15
-env = 'testing'
+# Configure Sidekiq
+Sidekiq.configure_client do |config|
+  config.redis = { url: ENV['HGS_REDIS_URL'] }
+end
+
 collector = Collector.new
 reporter = Reporter.new(namespace: ['sidekiq', env])
 
+# Main loop
 loop do
   reporter.send collector.stats
 
