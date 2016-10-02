@@ -11,7 +11,7 @@ Dotenv.load
 
 # Load configuration options from env
 # HGS stands for Hosted Graphite Sidekiq
-env = ENV['HGS_ENV'] || :development
+env = ENV['HGS_ENV']&.to_sym || :development
 interval = ENV['HGS_INTERVAL']&.to_i || 15
 
 # Load all the files from lib directory
@@ -24,7 +24,9 @@ Logger.path = File.join(path, 'log', "#{env}.log")
 Logger.level = :debug
 
 # Configure HostedGraphite
-HostedGraphite.enabled = false
+HostedGraphite.enabled = ![:development, :test].include?(env)
+HostedGraphite.api_key = ENV['HGS_HOSTED_GRAPHITE_API_KEY']
+HostedGraphite.protocol = :http
 
 # Configure Sidekiq
 Sidekiq.configure_client do |config|
