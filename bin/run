@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+path = File.expand_path('../', File.dirname(__FILE__))
+
 require 'rubygems'
 require 'bundler'
 
@@ -13,9 +15,13 @@ env = ENV['HGS_ENV'] || :development
 interval = ENV['HGS_INTERVAL']&.to_i || 15
 
 # Load all the files from lib directory
-Dir[File.expand_path('../lib/*.rb', File.dirname(__FILE__))].each do |file|
+Dir[File.join(path, 'lib/*.rb')].each do |file|
   require file
 end
+
+# Configure Logger
+Logger.path = File.join(path, 'log', "#{env}.log")
+Logger.level = :debug
 
 # Configure HostedGraphite
 HostedGraphite.enabled = false
