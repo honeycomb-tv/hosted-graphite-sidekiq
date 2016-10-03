@@ -1,4 +1,4 @@
-class Logger
+class HGSLogger
   class << self
     attr_accessor :path, :level
 
