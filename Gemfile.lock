@@ -10,8 +10,7 @@ GEM
   specs:
     ast (2.3.0)
     coderay (1.1.1)
-    concurrent-ruby (1.0.2)
-    connection_pool (2.2.0)
+    connection_pool (2.2.5)
     diff-lcs (1.2.5)
     dotenv (2.1.1)
     eventmachine (1.2.0.1)
@@ -23,11 +22,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    rack (2.0.1)
-    rack-protection (1.5.3)
-      rack
+    rack (2.2.3)
     rainbow (2.1.0)
-    redis (3.3.1)
+    redis (4.4.0)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -48,11 +45,10 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
-    sidekiq (4.2.2)
-      concurrent-ruby (~> 1.0)
-      connection_pool (~> 2.2, >= 2.2.0)
-      rack-protection (~> 1.5)
-      redis (~> 3.2, >= 3.2.1)
+    sidekiq (6.2.2)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
     slop (3.6.0)
     unicode-display_width (1.1.1)
 
@@ -66,7 +62,7 @@ DEPENDENCIES
   pry
   rspec
   rubocop
-  sidekiq (~> 4.2.2)
+  sidekiq (~> 6.2.2)
 
 BUNDLED WITH
    1.13.1
