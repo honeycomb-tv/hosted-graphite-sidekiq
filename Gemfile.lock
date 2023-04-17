@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/honeycomb-tv/hosted_graphite.git
+  remote: https://github.com/honeycomb-tv/hosted_graphite.git
   revision: 1d437b41d05835cfb61b210f146b08a534e782b5
   branch: add-enabled-flag
   specs:
@@ -23,8 +23,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    rack (2.0.1)
-    rack-protection (1.5.3)
+    rack (3.0.7)
+    rack-protection (1.5.5)
       rack
     rainbow (2.1.0)
     redis (3.3.1)
