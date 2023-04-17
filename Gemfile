@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'sidekiq', '~> 4.2.2', require: 'sidekiq/api'
+gem 'sidekiq', '~> 5.2.10', require: 'sidekiq/api'
 gem 'eventmachine', '~> 1.2.0'
 # https://github.com/seuros/hosted_graphite/pull/16
 gem 'hosted_graphite', github: 'honeycomb-tv/hosted_graphite', branch: 'add-enabled-flag'
